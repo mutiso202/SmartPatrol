@@ -1,4 +1,4 @@
-package com.example.smartpatrol.actiities.adapters;
+package com.example.smartpatrol.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.smartpatrol.R;
-import com.example.smartpatrol.actiities.classes.screenItem;
+import com.example.smartpatrol.classes.screenItem;
 
 import java.util.List;
 

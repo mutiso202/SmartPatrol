@@ -4,98 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/whole_page_constraint"
-    tools:context=".Homepage_activity">
+    tools:context=".Homepage2Activity">
+
 
     <ImageView
-        android:id="@+id/user_icon"
-        android:layout_width="62dp"
-        android:layout_height="47dp"
-        android:contentDescription="Shows the user's profile"
-        app:layout_constraintBottom_toTopOf="@id/Schedule_drawable"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintLeft_toLeftOf="@id/whole_page_constraint"
-        app:layout_constraintRight_toRightOf="@id/whole_page_constraint"
-        app:layout_constraintTop_toTopOf="@+id/whole_page_constraint"
+        android:id="@+id/user_homepage2"
+        android:layout_width="73dp"
+        android:layout_height="46dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView27"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/user" />
 
     <ImageView
-        android:id="@+id/Schedule_drawable"
-        android:layout_width="292dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@id/textView3"
+        android:id="@+id/green_rectangle"
+        android:layout_width="321dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/patrol_text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_homepage2"
+        app:layout_constraintVertical_bias="0.977"
         app:srcCompat="@drawable/homepage_rectangle" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/Schedule_drawable"
-        app:layout_constraintBottom_toBottomOf="@id/Schedule_drawable"
-        android:orientation="vertical"
-        app:layout_constraintLeft_toLeftOf="@id/Schedule_drawable"
-        app:layout_constraintRight_toRightOf="@id/Schedule_drawable"
-        android:paddingStart="39dp"
-        >
-
-        <TextView
-            android:id="@+id/MyScheduleTextView"
-            android:layout_width="137dp"
-            android:layout_height="30dp"
-            android:text="My Schedule"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/Time_textView"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@id/Schedule_drawable"
-            app:layout_constraintRight_toRightOf="@id/Schedule_drawable"
-            app:layout_constraintTop_toTopOf="@id/Schedule_drawable" />
-
-        <TextView
-            android:id="@+id/Time_textView"
-            android:layout_width="129dp"
-            android:layout_height="17dp"
-            android:text="Time in: 10.00 a.m"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/Schedule_drawable"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@id/Schedule_drawable"
-            app:layout_constraintRight_toRightOf="@id/Schedule_drawable"
-            app:layout_constraintTop_toBottomOf="@id/MyScheduleTextView" />
-    </LinearLayout>
-
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="283dp"
+        android:layout_height="41dp"
+        android:text="Time in: 10.00am"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/green_rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/green_rectangle"
+        app:layout_constraintStart_toStartOf="@+id/green_rectangle"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView27"
+        android:layout_width="275dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="12dp"
+        android:text="My Schedule"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/green_rectangle"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toStartOf="@+id/green_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/green_rectangle" />
+
+    <TextView
+        android:id="@+id/patrol_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="156dp"
-        android:paddingStart="20dp"
         android:text="Patrols"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/cardView"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/whole_page_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/Schedule_drawable"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/green_rectangle"
+        app:layout_constraintBottom_toTopOf="@+id/cardView_1"
+        tools:layout_editor_absoluteY="203dp" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/cardView_1"
+        android:layout_width="328dp"
+        android:layout_height="87dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:visibility="visible"
         app:cardBackgroundColor="@color/accent"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+        app:layout_constraintTop_toBottomOf="@+id/patrol_text">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -103,96 +88,7 @@
             android:padding="8dp">
 
             <ImageView
-                android:id="@+id/carView3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/ic_car" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:baselineAligned="false">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="70"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/date_textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Date"
-                        android:textColor="@color/white" />
-
-                    <TextView
-                        android:id="@+id/time_textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Time"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="30"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/date_textView6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="15th August 2000"
-                        android:textColor="@color/white" />
-
-                    <TextView
-                        android:id="@+id/time_textView6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="10.00 am"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="@color/accent"
-        app:cardCornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="322dp"
-            android:layout_height="wrap_content"
-            android:padding="8dp">
-
-            <ImageView
-                android:id="@+id/carView1"
+                android:id="@+id/car1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
@@ -221,14 +117,14 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/date_textView1"
+                        android:id="@+id/date1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/time_textView1"
+                        android:id="@+id/time1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Time"
@@ -239,18 +135,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="30"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/date_textView2"
+                        android:id="@+id/month1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="15th August 2000"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/time_textView2"
+                        android:id="@+id/am1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="10.00 am"
@@ -262,18 +159,17 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/cardView_2"
+        android:layout_width="327dp"
+        android:layout_height="83dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:visibility="visible"
         app:cardBackgroundColor="@color/accent"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        app:layout_constraintTop_toBottomOf="@+id/cardView_1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -281,7 +177,7 @@
             android:padding="8dp">
 
             <ImageView
-                android:id="@+id/carView2"
+                android:id="@+id/car2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
@@ -301,8 +197,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:baselineAligned="false">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -311,14 +206,14 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/date_textView3"
+                        android:id="@+id/date2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/time_textView3"
+                        android:id="@+id/time2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Time"
@@ -329,65 +224,131 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="30"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/date_textView4"
+                        android:id="@+id/month2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="15th August 2000"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/time_textView4"
+                        android:id="@+id/am2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="10.00 am"
                         android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="126dp"
-        android:layout_height="31dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_3"
+        android:layout_width="327dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="View all patrols"
-        android:textColor="@color/black"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintLeft_toLeftOf="@id/whole_page_constraint"
-        app:layout_constraintRight_toRightOf="@id/whole_page_constraint"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No previous patrols"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/accent"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@id/cardView_2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="326dp"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/car3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/ic_car" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="70"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/date3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Date"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/time3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Time"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="30"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/month3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="15th August 2000"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/am3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10.00 am"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <com.ncorti.slidetoact.SlideToActView
-        android:id="@+id/Swipe_button"
-        android:layout_width="292dp"
-        android:layout_height="72dp"
+        android:id="@+id/Swipe_homepage2"
+        android:layout_width="278dp"
+        android:layout_height="91dp"
         android:backgroundTint="@color/accent"
-        app:text_color="@color/black"
-        app:text_style="bold"
-        app:text_size="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0"
-        app:text="Swipe to start patrol" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView_3"
+        app:text="Swipe to start patrol"
+        app:text_color="@color/black"
+        app:text_size="15sp"
+        app:text_style="bold" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

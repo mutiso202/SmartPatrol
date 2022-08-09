@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 import com.example.smartpatrol.LoginActivity;
 import com.example.smartpatrol.R;
-import com.example.smartpatrol.actiities.adapters.WalkthroughAdapter;
-import com.example.smartpatrol.actiities.classes.screenItem;
+import com.example.smartpatrol.adapters.WalkthroughAdapter;
+import com.example.smartpatrol.classes.screenItem;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class Splashscreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_splashscreen);
 
         Thread spalshscreen=new Thread(){
             @Override
@@ -71,8 +71,7 @@ public class Splashscreen extends AppCompatActivity {
         private final int[] pictureResources=new int[]{
                 R.drawable.mobileencryption,
                 R.drawable.security,
-                R.drawable.surveillance
-        };
+                R.drawable.surveillance};
 
 
         @Override

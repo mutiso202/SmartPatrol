@@ -21,10 +21,19 @@
         android:theme="@style/Theme.SmartPatrol"
         tools:targetApi="31">
         <activity
-            android:name=".MultimediaActivity"
+            android:name=".Homepage2Activity"
             android:exported="false" />
         <activity
-            android:name=".IncidentActivity"
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Incident2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Incident1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Incident2Activity"
             android:exported="false" />
 
         <meta-data

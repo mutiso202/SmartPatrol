@@ -3,30 +3,41 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable-anydpi/ic_edit.xml" value="0.13" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/boxed_rectangle.xml" value="0.1315" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/button_signup.xml" value="0.245" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/homepage_rectangle.xml" value="0.1555" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/homepage_rectangle2.xml" value="0.1555" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.245" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/ic_car.xml" value="0.1795" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/ic_report.xml" value="0.13" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/incident_rectangle.xml" value="0.1" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/indicator_default.xml" value="0.245" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/indicator_selected.xml" value="0.246" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/indicator_selector.xml" value="0.246" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/loginrectangle.xml" value="0.2245" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/pencil.xml" value="0.1275" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/drawable/rectangle.xml" value="0.12" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_homepage.xml" value="0.25" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_homepage2.xml" value="0.33" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_incident.xml" value="0.2703125" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_incident1.xml" value="0.25" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_incident2.xml" value="0.25" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_main.xml" value="0.4265625" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_multimedia.xml" value="0.2703125" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_patrol.xml" value="0.25234375" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_patrolmap.xml" value="0.409375" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_scan.xml" value="0.26875" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_schedule.xml" value="0.2231722958529286" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_trial.xml" value="0.5" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_wakthrough_screen.xml" value="0.36015625" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/activity_walkthrough_screen.xml" value="0.3680555555555556" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/fragment_map.xml" value="0.1" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/incident1.xml" value="0.2916666666666667" />
         <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/layout_walkthrough_screen.xml" value="0.4265625" />
-        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/patrol_card.xml" value="0.5" />
+        <entry key="..\:/Users/Roda Mutiso/AndroidStudioProjects/Smartpatrol/app/src/main/res/layout/patrol_card.xml" value="0.25" />
       </map>
     </option>
   </component>

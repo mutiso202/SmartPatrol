@@ -1,4 +1,4 @@
-package com.example.smartpatrol.actiities.classes;
+package com.example.smartpatrol.classes;
 
 public class screenItem {
     String title,description;

@@ -86,21 +86,23 @@
             android:layout_marginRight="16dp"
             app:layout_constraintStart_toStartOf="parent">
 
+
+
             <TextView
-                android:id="@+id/name_text"
+                android:id="@+id/email_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="3dp"
-                android:text="Username"
+                android:text="Email"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintTop_toTopOf="@id/login_rectangle" />
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -137,7 +139,7 @@
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/login"
+                android:id="@+id/signIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -145,7 +147,8 @@
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/accent"
                 android:padding="13dp"
-                android:text="LOGIN"
+                android:text="Sign IN"
+                android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
