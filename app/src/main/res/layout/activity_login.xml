@@ -1,58 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:outlineProvider="none">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/constraint_layout1">
 
-
-        <ImageView
-            android:id="@+id/login_rectangle"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/linear_layout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/rectangle" />
-
         <LinearLayout
             android:id="@+id/linear_layout1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintBottom_toBottomOf="@id/login_rectangle"
-            app:layout_constraintLeft_toLeftOf="@id/login_rectangle"
-            app:layout_constraintRight_toRightOf="@id/login_rectangle"
+            android:weightSum="1"
+            app:layout_constraintBottom_toTopOf="@+id/linear_layout2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/img_padlock"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/padlock"
-                android:layout_marginTop="64dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"/>
+                android:paddingTop="35dp"
+                android:paddingRight="290dp"
+                android:paddingLeft="15dp"
+                android:background="@color/primary_dark"/>
 
             <TextView
                 android:id="@+id/welcome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginBottom="7dp"
                 android:text="Welcome"
                 android:textColor="@color/white"
                 android:textSize="16dp"
+                android:paddingLeft="15dp"
+                android:background="@color/primary_dark"
                 app:layout_constraintBottom_toTopOf="@id/welcome_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -63,11 +54,12 @@
                 android:id="@+id/welcome_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
                 android:text="Sign in to continue"
                 android:textColor="@color/white"
+                android:paddingLeft="15dp"
                 android:textSize="14sp"
-                android:layout_marginBottom="64dp"
+                android:paddingBottom="85dp"
+                android:background="@color/primary_dark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toLeftOf="@id/constraint_layout1"
                 app:layout_constraintTop_toBottomOf="@id/welcome" />
@@ -77,14 +69,21 @@
         <LinearLayout
             android:id="@+id/linear_layout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
+            android:weightSum="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/boxed_rectangle"
+                android:layout_marginTop="10dp">
 
 
 
@@ -101,17 +100,45 @@
                 android:textSize="14sp"
                 app:layout_constraintTop_toTopOf="@id/login_rectangle" />
 
+                <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/boxed_rectangle"
-                android:padding="16dp"
-                android:textSize="15sp" />
+                android:layout_weight="15"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:background="@null"
+                android:hint="JohnDoe@gmail.com"/>
 
-            <TextView
+            <ImageView
+                android:id="@+id/imageView_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="85"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_email" />
+        </LinearLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/boxed_rectangle"
+            android:layout_marginTop="10dp">
+
+
+        <TextView
                 android:id="@+id/password_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -121,22 +148,49 @@
                 android:paddingBottom="3dp"
                 android:text="Password"
                 android:textColor="@color/black"
-                android:textSize="14sp"
-                />
+                android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
 
             <EditText
                 android:id="@+id/password"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/boxed_rectangle"
-                android:drawableRight="@drawable/ic_baseline_visibility_off_24"
+                android:layout_weight="15"
                 android:inputType="textPassword"
-                android:padding="16dp"
+                android:padding="10dp"
+                android:background="@null"
+                android:hint="........"
+                android:textColorHint="@color/black"
                 android:textSize="15sp" />
+            <ImageView
+                android:id="@+id/passwordVisibility"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="85"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_visibility_off_24" />
+        </LinearLayout>
+        </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Forgot your password?"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_dark" />
 
             <Button
                 android:id="@+id/signIn"
@@ -144,25 +198,32 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/accent"
-                android:padding="13dp"
+                android:padding="10dp"
                 android:text="Sign IN"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="14dp"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/RegisterBtn"
                 android:textColor="@color/black"
-                android:text="Forgot password"/>
+                android:text="Don't have an account? Register here"/>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressbarLogin"
+                android:layout_gravity="center"
+                tools:visibility="invisible" />
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-
-
-

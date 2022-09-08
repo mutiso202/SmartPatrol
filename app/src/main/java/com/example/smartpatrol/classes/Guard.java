@@ -1,35 +1,36 @@
 package com.example.smartpatrol.classes;
 
-import static com.example.smartpatrol.classes.FirebaseRepository.*;
-import static com.example.smartpatrol.util.AppSystem.*;
+import static com.example.smartpatrol.classes.FirebaseRepository.LoginUserWithEmailAndPassword;
+import static com.example.smartpatrol.util.AppSystem.checkForLoginErrors;
 
 import android.net.Uri;
 
-import androidx.annotation.NonNull;
-
 import com.example.smartpatrol.interfaces.callback;
 import com.example.smartpatrol.interfaces.logInGuard;
-import com.example.smartpatrol.util.AppSystem;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
 
 public class Guard  {
-    String uID,email,name;
     ArrayList<Patrol> patrols;
-    ArrayList<Incidents> incidents;
+    ArrayList<Incident> incidents;
     Schedule schedule;
-    Uri profilePicture;
     FirebaseUser user;
     FirebaseAuth mAuth;
 
-
     public Guard(){
         user=mAuth.getCurrentUser();
+    }
+
+    public String getContact() {return user.getPhoneNumber();}
+
+    public void setContact(PhoneAuthCredential authCredential, callback callback) {
+        user.updatePhoneNumber(authCredential);
     }
 
     public String getuID() {
@@ -59,7 +60,6 @@ public class Guard  {
       user.updateProfile(userProfileChangeRequest).addOnSuccessListener(unused -> callback.onSuccess(unused))
               .addOnFailureListener(e -> callback.onFailure(e));
     }
-
     public ArrayList<Patrol> getPatrols() {
         return patrols;
     }
@@ -68,11 +68,11 @@ public class Guard  {
         this.patrols = patrols;
     }
 
-    public ArrayList<Incidents> getIncidents() {
+    public ArrayList<Incident> getIncidents() {
         return incidents;
     }
 
-    public void setIncidents(ArrayList<Incidents> incidents) {
+    public void setIncidents(ArrayList<Incident> incidents) {
         this.incidents = incidents;
     }
 

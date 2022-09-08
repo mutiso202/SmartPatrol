@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/patrolCard">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -15,7 +16,8 @@
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardElevation="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -75,14 +77,14 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/DayTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="15th August 2000"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/TimeTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="10.00 am"

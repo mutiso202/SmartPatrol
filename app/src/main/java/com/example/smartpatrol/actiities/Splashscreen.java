@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.smartpatrol.LoginActivity;
 import com.example.smartpatrol.R;
+import com.example.smartpatrol.RegisterActivity;
 import com.example.smartpatrol.adapters.WalkthroughAdapter;
 import com.example.smartpatrol.classes.screenItem;
 import com.google.android.material.tabs.TabLayout;
@@ -81,7 +82,7 @@ public class Splashscreen extends AppCompatActivity {
             initializeVariables();
 
             //checkIfActivityWasOpenedBefore
-            if(restorePreviousPref()){ /*redirectActivity(WalkthroughScreen.this,SignUpScreen.class);finish(); */}
+            if(restorePreviousPref()){startActivity(new Intent(getApplicationContext(),LoginActivity.class));}
 
             //Main workflow
             setListeners();
@@ -113,7 +114,7 @@ public class Splashscreen extends AppCompatActivity {
             Descriptions=new ArrayList<>();
             pictures=new ArrayList<>();
 
-            initializeSliders();
+
 
         }
 
