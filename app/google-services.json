@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "435521985398",
+    "project_id": "smart-patrol-cd234",
+    "storage_bucket": "smart-patrol-cd234.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435521985398:android:dfa850a98fab66ec8e3857",
+        "android_client_info": {
+          "package_name": "Smart.patr0l"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435521985398-8e26se0nmv8ecftve5efharvpm6p8r1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCa4VbVL4Z5E-M0Nrz5Cd9TbFXuKniQEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435521985398-8e26se0nmv8ecftve5efharvpm6p8r1k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435521985398:android:a352c6b538f839078e3857",
+        "android_client_info": {
+          "package_name": "com.example.smartpatrol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435521985398-8e26se0nmv8ecftve5efharvpm6p8r1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCa4VbVL4Z5E-M0Nrz5Cd9TbFXuKniQEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435521985398-8e26se0nmv8ecftve5efharvpm6p8r1k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
