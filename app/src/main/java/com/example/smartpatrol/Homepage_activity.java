@@ -1,27 +1,14 @@
 package com.example.smartpatrol;
 
-import static com.example.smartpatrol.classes.Constants.*;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.smartpatrol.classes.Constants;
-import com.example.smartpatrol.classes.Guard;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.auth.User;
 import com.ncorti.slidetoact.SlideToActView;
-
-import java.util.HashMap;
 
 public class Homepage_activity extends AppCompatActivity {
     FirebaseFirestore db=FirebaseFirestore.getInstance();
@@ -55,7 +42,7 @@ public class Homepage_activity extends AppCompatActivity {
 
 
         Swipe_button.setOnSlideCompleteListener(slideToActView -> {
-            Intent intent = new Intent(Homepage_activity.this, patrolActivity.class);
+            Intent intent = new Intent(Homepage_activity.this, ScanActivity.class);
             startActivity(intent);
 
             /*int startPatrol=getTaskId();
@@ -71,10 +58,6 @@ public class Homepage_activity extends AppCompatActivity {
                     Toast.makeText(Homepage_activity.this, "Patrol started.", Toast.LENGTH_SHORT).show();
                 }
             });*/
-
-
-
-
 
         });
 

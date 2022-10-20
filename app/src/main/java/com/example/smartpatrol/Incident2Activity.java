@@ -116,7 +116,7 @@ public class Incident2Activity extends AppCompatActivity {
         send_incident2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Incident2Activity.this, patrolActivity.class);
+                Intent intent = new Intent(Incident2Activity.this, ScanActivity.class);
                 startActivity(intent);
 
                 String description = editText.getText().toString().trim();

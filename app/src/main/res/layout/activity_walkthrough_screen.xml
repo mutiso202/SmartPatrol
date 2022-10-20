@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actiities.Splashscreen$WakthroughScreen"
+    tools:context=".activities.Splashscreen$WakthroughScreen"
     android:background="#fff">
 
     <Button

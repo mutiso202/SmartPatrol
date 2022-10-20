@@ -1,4 +1,4 @@
-package com.example.smartpatrol.actiities;
+package com.example.smartpatrol.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.example.smartpatrol.LoginActivity;
 import com.example.smartpatrol.R;
-import com.example.smartpatrol.RegisterActivity;
 import com.example.smartpatrol.adapters.WalkthroughAdapter;
 import com.example.smartpatrol.classes.screenItem;
 import com.google.android.material.tabs.TabLayout;

@@ -1,46 +1,77 @@
 package com.example.smartpatrol;
 
-import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.camera.lifecycle.ProcessCameraProvider;
-import androidx.camera.view.PreviewView;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-import com.google.common.util.concurrent.ListenableFuture;
+import com.example.smartpatrol.classes.CaptureAct;
+import com.journeyapps.barcodescanner.ScanContract;
+import com.journeyapps.barcodescanner.ScanOptions;
 
 public class ScanActivity extends AppCompatActivity {
-
-    private ImageView scanArrowBack;
-           private PreviewView cameraPreview;
-           private ListenableFuture<ProcessCameraProvider>cameraProviderListenableFuture;
-
+    ImageView IconUser;
+    TextView buttonReport;
+    Button btn_scan;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
-        cameraPreview = findViewById(R.id.cameraPreview);
-        scanArrowBack=findViewById(R.id.scanArrowBack);
+        btn_scan =findViewById(R.id.btn_scan);
+        IconUser=findViewById(R.id.IconUser);
+        buttonReport=findViewById(R.id.buttonReport);
 
-        //check camera for permissions
-        if (ContextCompat.checkSelfPermission(ScanActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-            init();
-        }
-        else {
-            ActivityCompat.requestPermissions(ScanActivity.this,new String[]{Manifest.permission.CAMERA},101);
-        }
-        scanArrowBack.setOnClickListener(v -> {
-            Intent intent=new Intent(ScanActivity.this, patrolActivity.class);
+        IconUser.setOnClickListener(view -> {
+            Intent intent=new Intent(ScanActivity.this,ProfileActivity.class);
             startActivity(intent);
+        });
+
+        buttonReport.setOnClickListener(view -> {
+            Intent intent=new Intent(ScanActivity.this, Incident1Activity.class);
+            startActivity(intent);
+        });
+
+
+        btn_scan.setOnClickListener(v->
+        {
+            scanCode();
         });
     }
 
-    private void init() {
-
+    private void scanCode()
+    {
+        ScanOptions options = new ScanOptions();
+        options.setPrompt("Volume up to flash on");
+        options.setBeepEnabled(true);
+        options.setOrientationLocked(true);
+        options.setCaptureActivity(CaptureAct.class);
+        barLaucher.launch(options);
     }
+
+    ActivityResultLauncher<ScanOptions> barLaucher = registerForActivityResult(new ScanContract(), result->
+    {
+        if(result.getContents() !=null)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(ScanActivity.this);
+            builder.setTitle("Result");
+            builder.setMessage(result.getContents());
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+            {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i)
+                {
+                    dialogInterface.dismiss();
+                }
+            }).show();
+        }
+    });
+
+
 }

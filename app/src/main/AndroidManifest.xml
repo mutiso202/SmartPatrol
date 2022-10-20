@@ -20,18 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPatrol"
         tools:targetApi="31">
-        <activity
-            android:name=".ScheduleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".patrolListActivity"
-            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -47,6 +35,18 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_API_KEY" />
 
+        <activity
+            android:name=".ScheduleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patrolListActivity"
+            android:exported="false" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
@@ -67,19 +67,23 @@
             android:name=".ScanActivity"
             android:exported="false" />
         <activity
-            android:name=".patrolActivity"
-            android:exported="false" />
-        <activity
             android:name=".Homepage_activity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".actiities.Splashscreen$WakthroughScreen"
+            android:name=".activities.Splashscreen$WakthroughScreen"
             android:exported="false" />
         <activity
-            android:name=".actiities.Splashscreen"
+        android:name=".classes.CaptureAct"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            />
+
+        <activity
+            android:name=".activities.Splashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,7 +2,6 @@ package com.example.smartpatrol;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,13 +28,13 @@ public class Incident1Activity extends AppCompatActivity {
 
         next_incident1.setOnClickListener(v -> {
             Intent intent=new Intent(Incident1Activity.this, Incident2Activity.class);
-            intent.putExtra("RadioGroup", (Parcelable) radioButton);
+            /*intent.putExtra("RadioGroup",  radioButton.getText().toString());*/
             startActivity(intent);
         });
 
 
         back_incident1.setOnClickListener(v -> {
-                Intent intent=new Intent(Incident1Activity.this,patrolActivity.class);
+                Intent intent=new Intent(Incident1Activity.this,ScanActivity.class);
                 startActivity(intent);
             });
 

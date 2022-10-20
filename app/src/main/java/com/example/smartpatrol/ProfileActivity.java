@@ -37,10 +37,6 @@ public class ProfileActivity extends AppCompatActivity {
     Button signOutButton;
     CardView cardView_Report, cardView_EndPatrol;
     ImageView imageViewProfile,imageArrowBack,edit;
-    String userID;
-    FirebaseAuth mAuth;
-
-
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -57,13 +53,9 @@ public class ProfileActivity extends AppCompatActivity {
         imageViewProfile=findViewById(R.id.imageViewProfile);
         imageArrowBack=findViewById(R.id.imageArrowBack);
         edit=findViewById(R.id.edit);
-        FirebaseUser user= mAuth.getCurrentUser();
-
-        user_name.setText(mAuth.getCurrentUser().getDisplayName());
 
 
-
-        imageArrowBack.setOnClickListener(v -> {
+       imageArrowBack.setOnClickListener(v -> {
             Intent intent=new Intent(ProfileActivity.this, Homepage_activity.class);
             startActivity(intent);
         });
