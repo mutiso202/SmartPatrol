@@ -19,7 +19,6 @@ import java.util.ArrayList;
 public class Guard  {
     ArrayList<Patrol> patrols;
     ArrayList<Incident> incidents;
-    Schedule schedule;
     FirebaseUser user;
     FirebaseAuth mAuth;
 
@@ -74,14 +73,6 @@ public class Guard  {
 
     public void setIncidents(ArrayList<Incident> incidents) {
         this.incidents = incidents;
-    }
-
-    public Schedule getSchedule() {
-        return schedule;
-    }
-
-    public void setSchedule(Schedule schedule) {
-        this.schedule = schedule;
     }
 
     public Uri getProfilePicture() {

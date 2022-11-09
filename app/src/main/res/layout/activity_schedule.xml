@@ -6,204 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".ScheduleActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
         android:background="@color/primary_dark"
-        android:gravity="center"
-        android:text="My Schedule"
-        android:padding="8dp"
-        android:textColor="@color/white"
-        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:id="@+id/linearMonday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/boxed_rectangle"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/backFromSchedule"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            tools:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/ic_wave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="3dp"
-            android:text="Monday"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/login_rectangle" />
-
-        <EditText
-            android:id="@+id/Monday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="15"
-            android:background="@null"
-            android:hint="10.30am"
-            android:padding="10dp"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearTuesday"
+    <TextView
+        android:id="@+id/textViewPatrol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/boxed_rectangle"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearMonday">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="3dp"
-            android:text="Monday"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/login_rectangle" />
-
-        <EditText
-            android:id="@+id/Tuesday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="15"
-            android:background="@null"
-            android:hint="10.30am"
-            android:padding="10dp"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearWednesday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/boxed_rectangle"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearTuesday">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="3dp"
-            android:text="Monday"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/login_rectangle" />
-
-        <EditText
-            android:id="@+id/Wednesday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="15"
-            android:background="@null"
-            android:hint="10.30am"
-            android:padding="10dp"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearThursday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/boxed_rectangle"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearWednesday">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="3dp"
-            android:text="Monday"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/login_rectangle" />
-
-        <EditText
-            android:id="@+id/Thursday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="15"
-            android:background="@null"
-            android:hint="10.30am"
-            android:padding="10dp"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearFriday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/boxed_rectangle"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearThursday">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="3dp"
-            android:text="Monday"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="@id/login_rectangle" />
-
-        <EditText
-            android:id="@+id/Friday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="15"
-            android:background="@null"
-            android:hint="10.30am"
-            android:padding="10dp"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/Set"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/accent"
-        android:text="SET"
+        android:text="View Schedule"
         android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearFriday" />
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/schedule_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:layout_marginBottom="8dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPatrol"
+        tools:listitem="@layout/schedule_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

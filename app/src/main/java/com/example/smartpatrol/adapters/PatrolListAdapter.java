@@ -34,6 +34,9 @@ public class PatrolListAdapter extends RecyclerView.Adapter<PatrolListAdapter.My
     public void onBindViewHolder(@NonNull PatrolListAdapter.MyViewHolder holder, int position) {
     Patrol patrol=arrayListPatrol.get(position);
 
+    //holder.TimeTextView.setText(patrol.getTime());
+   // holder.DayTextView.setText(patrol.getClass());
+
     }
 
     @Override
@@ -42,11 +45,13 @@ public class PatrolListAdapter extends RecyclerView.Adapter<PatrolListAdapter.My
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView TimeTextView;
+        public TextView TimeTextView;
+        public TextView DayTextView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             TimeTextView = itemView.findViewById(R.id.TimeTextView);
+            DayTextView= itemView.findViewById(R.id.DayTextView);
         }
     }
 }

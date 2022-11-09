@@ -45,7 +45,7 @@
             android:name=".EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".patrolListActivity"
+            android:name=".PatrolListActivity"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"

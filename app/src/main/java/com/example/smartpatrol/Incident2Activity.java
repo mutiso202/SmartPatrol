@@ -42,7 +42,7 @@ import java.util.Locale;
 public class Incident2Activity extends AppCompatActivity {
     Button send_incident2;
     EditText editText;
-    CardView cameraView;
+    CardView cameraView, galleryView;
     ImageView back_incident2;
     ImageView cameraIcon, galleryIcon;
     private final int GALLERY_REQ_CODE = 1000;
@@ -58,13 +58,10 @@ public class Incident2Activity extends AppCompatActivity {
 
 
         cameraView = findViewById(R.id.cameraView);
+        galleryView= findViewById(R.id.galleryView);
         back_incident2 = findViewById(R.id.back_incident2);
         cameraIcon = findViewById(R.id.cameraIcon);
         galleryIcon = findViewById(R.id.galleryIcon);
-        /*galleryIcon=findViewById(R.id.galleryView);
-
-        textViewGallery=findViewById(R.id.textViewGallery);
-        textViewTakePhoto=findViewById(R.id.textViewTakePhoto);*/
         editText = findViewById(R.id.editText);
         send_incident2 = findViewById(R.id.send_incident2);
         db = FirebaseFirestore.getInstance();
@@ -86,7 +83,7 @@ public class Incident2Activity extends AppCompatActivity {
         });
 
 
-        galleryIcon.setOnClickListener(new View.OnClickListener() {
+        galleryView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent open_gallery = new Intent(Intent.ACTION_PICK);
@@ -95,7 +92,7 @@ public class Incident2Activity extends AppCompatActivity {
             }
         });
 
-        cameraIcon.setOnClickListener(new View.OnClickListener() {
+        cameraView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent open_camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

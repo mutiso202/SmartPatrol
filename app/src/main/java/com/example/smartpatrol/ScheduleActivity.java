@@ -4,39 +4,56 @@ import static com.example.smartpatrol.classes.Constants.PATROLS;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.smartpatrol.adapters.PatrolListAdapter;
+import com.example.smartpatrol.adapters.ScheduleAdapter;
 import com.example.smartpatrol.classes.Guard;
+import com.example.smartpatrol.classes.Patrol;
+import com.example.smartpatrol.classes.Schedule;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ScheduleActivity extends AppCompatActivity {
-    Button Set;
-    EditText Monday, Tuesday, Wednesday, Thursday, Friday;
-    FirebaseFirestore dbSchedule;
+    RecyclerView Recycler_view;
+    ArrayList<Schedule> arrayListSchedule;
+    ScheduleAdapter ScheduleAdapter;
+    FirebaseFirestore db;
+    ImageView backFromPatrol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-        Set=findViewById(R.id.Set);
-        Monday=findViewById(R.id.Monday);
-        Tuesday=findViewById(R.id.Tuesday);
-        Wednesday=findViewById(R.id.Wednesday);
-        Thursday=findViewById(R.id.Thursday);
-        Friday=findViewById(R.id.Friday);
-        dbSchedule=FirebaseFirestore.getInstance();
 
-        Set.setOnClickListener(new View.OnClickListener() {
+        backFromPatrol=findViewById(R.id.backFromPatrol);
+        Recycler_view=findViewById(R.id.schedule_recyclerView);
+        Recycler_view.setHasFixedSize(true);
+        Recycler_view.setLayoutManager(new LinearLayoutManager(this));
+
+        db=FirebaseFirestore.getInstance();
+        arrayListSchedule=new ArrayList<Schedule>();
+        ScheduleAdapter=new ScheduleAdapter(ScheduleActivity.this, arrayListSchedule);
+
+        backFromPatrol.setOnClickListener(view -> {
+            Intent intent=new Intent(ScheduleActivity.this, Homepage_activity.class);
+            startActivity(intent);
+        });
+
+        /*Set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(ScheduleActivity.this, Homepage_activity.class);
@@ -69,6 +86,6 @@ public class ScheduleActivity extends AppCompatActivity {
                             }
                         });
             }
-        });
+        });*/
     }
 }

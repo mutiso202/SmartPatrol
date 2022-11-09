@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/patrolCard">
+    android:layout_height="match_parent"
+    android:id="@+id/scheduleCard">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/ic_car" />
+                tools:srcCompat="@drawable/schedule" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -42,22 +42,26 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:layout_marginLeft="32dp"
+                android:padding="5dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="70"
-                    android:orientation="vertical">
+                    android:layout_weight="90"
+                    android:orientation="vertical"
+                    >
 
                     <TextView
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Date"
+                        android:text="Day"
                         android:textColor="@color/white" />
 
                     <TextView
@@ -73,18 +77,18 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_weight="30"
+                    android:layout_weight="60"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/DayTextView"
+                        android:id="@+id/DayScheduled"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="15th August 2000"
+                        android:text="Monday"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/TimeTextView"
+                        android:id="@+id/TimeScheduled"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="10.00 am"
@@ -94,5 +98,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

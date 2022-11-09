@@ -55,7 +55,15 @@ public class ProfileActivity extends AppCompatActivity {
         edit=findViewById(R.id.edit);
 
 
-       imageArrowBack.setOnClickListener(v -> {
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(ProfileActivity.this,EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imageArrowBack.setOnClickListener(v -> {
             Intent intent=new Intent(ProfileActivity.this, Homepage_activity.class);
             startActivity(intent);
         });
@@ -66,19 +74,18 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
         signOutButton.setOnClickListener(v -> {
-                    moveTaskToBack(true);
-                    android.os.Process.killProcess(android.os.Process.myPid());
-                    System.exit(1);
-                });
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        });
 
-            cardView_EndPatrol.setOnClickListener(v1 -> {
-                moveTaskToBack(true);
-                android.os.Process.killProcess(android.os.Process.myPid());
-                System.exit(1);
-            });
-
-    }
-
+        cardView_EndPatrol.setOnClickListener(v1 -> {
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        });
 
     }
 
+
+}
