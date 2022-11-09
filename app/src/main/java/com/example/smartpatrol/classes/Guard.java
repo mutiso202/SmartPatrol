@@ -1,28 +1,27 @@
 package com.example.smartpatrol.classes;
 
-import static com.example.smartpatrol.classes.FirebaseRepository.LoginUserWithEmailAndPassword;
-import static com.example.smartpatrol.util.AppSystem.checkForLoginErrors;
 
 import android.net.Uri;
 
+import com.example.smartpatrol.Models.Incident;
+import com.example.smartpatrol.Models.Patrol;
 import com.example.smartpatrol.interfaces.callback;
-import com.example.smartpatrol.interfaces.logInGuard;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
 
 public class Guard  {
     ArrayList<Patrol> patrols;
     ArrayList<Incident> incidents;
+   // Schedule schedule;
     FirebaseUser user;
     FirebaseAuth mAuth;
 
     public Guard(){
+        mAuth=FirebaseAuth.getInstance();
         user=mAuth.getCurrentUser();
     }
 
@@ -75,6 +74,14 @@ public class Guard  {
         this.incidents = incidents;
     }
 
+    //public Schedule getSchedule() {
+   //     return schedule;
+   // }
+
+   // public void setSchedule(Schedule schedule) {
+     //   this.schedule = schedule;
+   // }
+
     public Uri getProfilePicture() {
        return user.getPhotoUrl();
     }
@@ -100,9 +107,5 @@ public class Guard  {
         return incidents.size();
     }
 
-    public void logInGuard(String email, String password, logInGuard logInGuard){
-        if (checkForLoginErrors(email,password)!=null)logInGuard.failedLogIn(checkForLoginErrors(email,password));
-        else LoginUserWithEmailAndPassword(email, password,logInGuard);
-    }
 
 }

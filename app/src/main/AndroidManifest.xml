@@ -70,7 +70,7 @@
             android:name=".Homepage_activity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".activities.Splashscreen$WakthroughScreen"

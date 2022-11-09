@@ -7,8 +7,10 @@ import android.widget.EditText;
 import com.example.smartpatrol.interfaces.callback;
 import com.google.firebase.auth.FirebaseAuth;
 
-public abstract class AppSystem implements callback {
+import java.util.Random;
 
+public abstract class AppSystem implements callback {
+    private static final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnm";
     public AppSystem(){
 
     }
@@ -24,6 +26,14 @@ public abstract class AppSystem implements callback {
         if (!email.contains(".com"))return EMAIL_INVALID_ERROR;
         return null;
 
+    }
+    public static String getRandomString(final int sizeOfRandomString)
+    {
+        final Random random=new Random();
+        final StringBuilder sb=new StringBuilder(sizeOfRandomString);
+        for(int i=0;i<sizeOfRandomString;++i)
+            sb.append(ALLOWED_CHARACTERS.charAt(random.nextInt(ALLOWED_CHARACTERS.length())));
+        return sb.toString();
     }
     private static String checkPasswordForErrors(String password){
         if (password.isEmpty()) return PASSWORD_IS_EMPTY_ERROR;

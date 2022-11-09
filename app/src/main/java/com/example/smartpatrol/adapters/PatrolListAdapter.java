@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartpatrol.R;
-import com.example.smartpatrol.classes.Patrol;
+import com.example.smartpatrol.Models.Patrol;
 
 import java.util.ArrayList;
 

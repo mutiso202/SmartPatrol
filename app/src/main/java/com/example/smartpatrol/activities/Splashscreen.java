@@ -14,7 +14,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.smartpatrol.LoginActivity;
 import com.example.smartpatrol.R;
 import com.example.smartpatrol.adapters.WalkthroughAdapter;
 import com.example.smartpatrol.classes.screenItem;

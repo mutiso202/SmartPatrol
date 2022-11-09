@@ -1,7 +1,5 @@
 package com.example.smartpatrol;
 
-import static android.os.Build.VERSION_CODES.O;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,12 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.smartpatrol.classes.Guard;
+import com.example.smartpatrol.activities.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

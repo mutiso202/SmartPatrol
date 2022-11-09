@@ -10,4 +10,6 @@ public class FirebaseFields {
     public static final String ENDINGLOCATION = "EndingLocation";
 
     //GUARDS
+    public static final String EMAIL = "email";
+    public static final String PASSWORD = "password";
 }

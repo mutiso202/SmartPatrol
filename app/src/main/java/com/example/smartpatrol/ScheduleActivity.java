@@ -1,31 +1,18 @@
 package com.example.smartpatrol;
 
-import static com.example.smartpatrol.classes.Constants.PATROLS;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.example.smartpatrol.adapters.PatrolListAdapter;
 import com.example.smartpatrol.adapters.ScheduleAdapter;
-import com.example.smartpatrol.classes.Guard;
-import com.example.smartpatrol.classes.Patrol;
 import com.example.smartpatrol.classes.Schedule;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ScheduleActivity extends AppCompatActivity {
     RecyclerView Recycler_view;

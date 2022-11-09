@@ -2,7 +2,6 @@ package com.example.smartpatrol;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartpatrol.adapters.PatrolListAdapter;
-import com.example.smartpatrol.classes.Patrol;
+import com.example.smartpatrol.Models.Patrol;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class PatrolListActivity extends AppCompatActivity {
         Recycler_view.setLayoutManager(new LinearLayoutManager(this));
 
         db=FirebaseFirestore.getInstance();
-        arrayListPatrol=new ArrayList<Patrol>();
+        arrayListPatrol=new ArrayList<>();
         patrolListAdapter=new PatrolListAdapter(PatrolListActivity.this,arrayListPatrol);
 
         backFromPatrol.setOnClickListener(view -> {
