@@ -12,4 +12,13 @@ public class FirebaseFields {
     //GUARDS
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
+
+    //PATROLS
+    public static final String YEAR="year";
+    public static final String MONTH="month";
+    public static final String DAY="day";
+    public static final String HOUR="hour";
+    public static final String MINUTE = "minute";
+
+
 }

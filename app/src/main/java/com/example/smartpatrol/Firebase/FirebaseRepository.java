@@ -17,6 +17,11 @@ public class FirebaseRepository {
                .addOnSuccessListener(v-> callback.onSuccess(v))
                .addOnFailureListener(e->callback.onFailure(e));
    }
+    public static void getDocumentsInCollection(CollectionReference reference, callback callback){
+        reference.get()
+                .addOnCompleteListener(v-> callback.onSuccess(v))
+                .addOnFailureListener(e->callback.onFailure(e));
+    }
 
    public static void setDocument(Map<String,Object> map, DocumentReference reference, callback call){
        reference.set(map)

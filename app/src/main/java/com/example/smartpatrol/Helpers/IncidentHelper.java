@@ -6,14 +6,17 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.smartpatrol.Firebase.FirebaseFields;
 import com.example.smartpatrol.Firebase.FirebaseRepository;
 import com.example.smartpatrol.Incident2Activity;
 import com.example.smartpatrol.Models.Incident;
+import com.example.smartpatrol.classes.Guard;
 import com.example.smartpatrol.interfaces.callback;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +37,10 @@ public class IncidentHelper {
 
     private static Map<String, Object> createIncidentMap(Incident incident) {
         Map<String,Object> hashMap = new HashMap();
-        hashMap.put("incident", incident);
+        hashMap.put("Date", new Date());
+        hashMap.put("Description", incident.getDescription());
+        hashMap.put("Guard", new Guard().getuID());
+        hashMap.put("Title", incident.getSituation());
         return hashMap;
     }
 

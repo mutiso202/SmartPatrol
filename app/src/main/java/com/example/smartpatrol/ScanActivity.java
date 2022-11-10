@@ -34,6 +34,7 @@ import com.journeyapps.barcodescanner.ScanOptions;
 import org.checkerframework.checker.units.qual.C;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class ScanActivity extends AppCompatActivity {
     ImageView IconUser;
@@ -90,8 +91,11 @@ public class ScanActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),
                                 "Move to next checkpoint",
                                 Toast.LENGTH_SHORT).show();
+
+
                     else{
                         getEndLocationOnSwipe();
+
 
                     }
 
@@ -113,7 +117,9 @@ public class ScanActivity extends AppCompatActivity {
 
                 location=(Location)o;
                 patrol.setStartLocation(new LatLng(location.getLatitude(),location.getLongitude()));
-                patrol.setCalendar(Calendar.getInstance());
+                Calendar calendar=Calendar.getInstance();
+                calendar.setTime(new Date());
+                patrol.setCalendar(calendar);
             }
 
             @Override
@@ -129,35 +135,38 @@ public class ScanActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Object o) {
 
-                endLocation=(Location)o;
-                patrol.setEndLocation(new LatLng(endLocation.getLatitude(),endLocation.getLongitude()));
+                endLocation = (Location) o;
+                Toast.makeText(ScanActivity.this, location.getProvider(), Toast.LENGTH_SHORT).show();
+                patrol.setEndLocation(new LatLng(endLocation.getLatitude(), endLocation.getLongitude()));
 
-                Guard signedInGuard=new Guard();
+                Guard signedInGuard = new Guard();
+                Toast.makeText(ScanActivity.this, " patrol", Toast.LENGTH_SHORT).show();
                 PatrolHelper.uploadPatrol(patrol, signedInGuard.getuID(), new callback() {
                     @Override
                     public void onSuccess(Object o) {
-                        Intent intent=new Intent(getApplicationContext(),ProfileActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                         startActivity(intent);
-                        finish();
+                        //finish();
                         Toast.makeText(ScanActivity.this, "Succesfully done patrol", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onFailure(Object o) {
-
+                        Toast.makeText(ScanActivity.this, "Error" + ((Exception) o).getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                });
 
+                });
 
             }
 
             @Override
             public void onFailure(Object o) {
-
+                Toast.makeText(ScanActivity.this, "Error" + ((Exception) o).getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
 
+        });
     }
+
 
     private void initializeViews() {
         btn_scan = findViewById(R.id.btn_scan);

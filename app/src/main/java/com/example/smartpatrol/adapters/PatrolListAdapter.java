@@ -1,5 +1,6 @@
 package com.example.smartpatrol.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,12 +31,22 @@ public class PatrolListAdapter extends RecyclerView.Adapter<PatrolListAdapter.My
         return new MyViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull PatrolListAdapter.MyViewHolder holder, int position) {
     Patrol patrol=arrayListPatrol.get(position);
 
-    //holder.TimeTextView.setText(patrol.getTime());
-   // holder.DayTextView.setText(patrol.getClass());
+    holder.TimeTextView.setText(
+            patrol.getHour()
+                    +":"
+                    +patrol.getMinute()+
+                    " hrs" );
+
+    holder.DayTextView.setText(
+            patrol.getDay()+"/"
+                    +patrol.getMonth()+"/"
+                    +patrol.getYear() );
+
 
     }
 

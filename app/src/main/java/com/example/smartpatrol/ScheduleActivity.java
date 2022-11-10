@@ -26,7 +26,7 @@ public class ScheduleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
-        backFromPatrol=findViewById(R.id.backFromPatrol);
+       // backFromPatrol=findViewById(R.id.backFromPatrol);
         Recycler_view=findViewById(R.id.schedule_recyclerView);
         Recycler_view.setHasFixedSize(true);
         Recycler_view.setLayoutManager(new LinearLayoutManager(this));
@@ -35,11 +35,11 @@ public class ScheduleActivity extends AppCompatActivity {
         arrayListSchedule=new ArrayList<Schedule>();
         ScheduleAdapter=new ScheduleAdapter(ScheduleActivity.this, arrayListSchedule);
 
-        backFromPatrol.setOnClickListener(view -> {
+       /* backFromPatrol.setOnClickListener(view -> {
             Intent intent=new Intent(ScheduleActivity.this, Homepage_activity.class);
             startActivity(intent);
         });
-
+*/
         /*Set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

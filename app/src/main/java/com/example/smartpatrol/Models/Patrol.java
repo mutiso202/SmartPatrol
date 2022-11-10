@@ -102,13 +102,13 @@ public class Patrol implements Parcelable {
     }
 
     public void setCalendar(Calendar calendar) {
-        this.calendar = calendar;
+        ;
         setHour(calendar.get(Calendar.HOUR_OF_DAY));
-        setMinute(Calendar.MINUTE);
-        setMonth(Calendar.MONTH);
-        setDay(Calendar.DAY_OF_MONTH);
-        setYear(Calendar.YEAR);
-
+        setMinute(calendar.get(Calendar.MINUTE));
+        setMonth(calendar.get(Calendar.MONTH));
+        setDay(calendar.get(Calendar.DAY_OF_MONTH));
+        setYear(calendar.get(Calendar.YEAR));
+        this.calendar = calendar;
     }
 
     @Override
