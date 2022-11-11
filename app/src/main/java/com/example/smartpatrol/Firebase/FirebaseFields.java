@@ -13,6 +13,7 @@ public class FirebaseFields {
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
 
+
     //PATROLS
     public static final String YEAR="year";
     public static final String MONTH="month";

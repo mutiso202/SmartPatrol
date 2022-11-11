@@ -1,7 +1,5 @@
 package com.example.smartpatrol.Models;
 
-import com.example.smartpatrol.classes.Schedule;
-
 import java.util.ArrayList;
 
 public class Guard {

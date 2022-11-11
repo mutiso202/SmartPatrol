@@ -1,11 +1,18 @@
 package com.example.smartpatrol.util;
 
+import static android.content.Context.LOCATION_SERVICE;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Build;
+import android.os.Looper;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -29,21 +36,27 @@ import java.util.Random;
 public class LocationUtils {
     private static final int PICK_IMAGE = 100;
     private static final int REQUEST_CODE = 1001;
+    private static final long LOCATION_REFRESH_TIME = 100;
+    private static final float LOCATION_REFRESH_DISTANCE = 5;
+    static LocationManager mLocationManager;
+    static LocationRequest  locationRequest;
 
-    public  static void requestLocationPermissions(Activity activity) {
+
+    public static void requestLocationPermissions(Activity activity) {
         if (ContextCompat.checkSelfPermission(activity.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) ==
                 PackageManager.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(activity.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) ==
                         PackageManager.PERMISSION_GRANTED) {
 
         } else {
-            ActivityCompat.requestPermissions(activity, new String[] {
+            ActivityCompat.requestPermissions(activity, new String[]{
                             Manifest.permission.ACCESS_FINE_LOCATION,
-                            Manifest.permission.ACCESS_COARSE_LOCATION },
+                            Manifest.permission.ACCESS_COARSE_LOCATION},
                     2);
         }
 
     }
+
     public static void requestGps(Activity activity) {
         LocationRequest locationRequest = LocationRequest.create();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -52,9 +65,71 @@ public class LocationUtils {
 
         LocationServices.getSettingsClient(activity)
                 .checkLocationSettings(builder.build())
-                .addOnCompleteListener(task -> promptUserForGps(task,activity));
+                .addOnCompleteListener(task -> promptUserForGps(task, activity));
     }
+
+
     public static void getMyDefaultLocation(Activity activity, callback callback) {
+        locationRequest = LocationRequest.create();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setInterval(5000);
+        locationRequest.setFastestInterval(2000);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+
+
+                    LocationServices.getFusedLocationProviderClient(activity)
+                            .requestLocationUpdates(locationRequest, new LocationCallback() {
+                                @Override
+                                public void onLocationResult(@NonNull LocationResult locationResult) {
+                                    super.onLocationResult(locationResult);
+
+                                    LocationServices.getFusedLocationProviderClient(activity)
+                                            .removeLocationUpdates(this);
+
+                                    if (locationResult != null && locationResult.getLocations().size() >0){
+
+                                        int index = locationResult.getLocations().size() - 1;
+                                        callback.onSuccess(locationResult.getLocations().get(index));
+
+                                    }
+                                }
+                            }, Looper.getMainLooper());
+
+
+            } else {
+                //requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            }
+        }
+       /* mLocationManager = (LocationManager) activity.getSystemService(LOCATION_SERVICE);
+
+
+        FusedLocationProviderClient fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity);
+        if (ActivityCompat.checkSelfPermission(
+                activity.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(activity.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
+
+            return;
+        }
+        //your code here
+        final LocationListener mLocationListener = (Location o) -> {
+            callback.onSuccess(o);
+        };
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, LOCATION_REFRESH_TIME,
+                LOCATION_REFRESH_DISTANCE, mLocationListener);
+
+     *//*   Task<Location> task = fusedLocationProviderClient.getLastLocation();
+        task
+                .addOnSuccessListener(location -> {
+                    if (location != null) callback.onSuccess(location);
+                    else getLocationUpdate(activity,callback);
+                })
+                .addOnFailureListener(e -> callback.onFailure(e));*/
+    }
+
+    private static void getLocationUpdate(Activity activity, callback callback) {
         LocationRequest mLocationRequest = LocationRequest.create();
         mLocationRequest.setInterval(60000);
         mLocationRequest.setFastestInterval(5000);
@@ -67,24 +142,22 @@ public class LocationUtils {
                 }
                 for (Location location : locationResult.getLocations()) {
                     if (location != null) {
-                       //callback.onSuccess(location);
+                        callback.onSuccess(location);
                     }
                 }
             }
         };
-        FusedLocationProviderClient fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity);
-        if (ActivityCompat.checkSelfPermission(
-                activity.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(activity.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
-            callback.onFailure("faiil");
+        if (ActivityCompat
+                .checkSelfPermission(
+                        activity.getApplicationContext(),
+                        Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(activity.getApplicationContext(),
+                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
             return;
         }
-        LocationServices.getFusedLocationProviderClient(activity).requestLocationUpdates(mLocationRequest, mLocationCallback, null);
-        Task<Location> task = fusedLocationProviderClient.getLastLocation();
-        task
-                .addOnSuccessListener(location -> {if (location != null) callback.onSuccess(location);})
-                .addOnFailureListener(e -> callback.onFailure(e));
+        LocationServices.getFusedLocationProviderClient(activity)
+                .requestLocationUpdates(mLocationRequest, mLocationCallback, null);
     }
 
 

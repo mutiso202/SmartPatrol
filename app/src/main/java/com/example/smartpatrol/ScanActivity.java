@@ -136,11 +136,9 @@ public class ScanActivity extends AppCompatActivity {
             public void onSuccess(Object o) {
 
                 endLocation = (Location) o;
-                Toast.makeText(ScanActivity.this, location.getProvider(), Toast.LENGTH_SHORT).show();
                 patrol.setEndLocation(new LatLng(endLocation.getLatitude(), endLocation.getLongitude()));
 
                 Guard signedInGuard = new Guard();
-                Toast.makeText(ScanActivity.this, " patrol", Toast.LENGTH_SHORT).show();
                 PatrolHelper.uploadPatrol(patrol, signedInGuard.getuID(), new callback() {
                     @Override
                     public void onSuccess(Object o) {

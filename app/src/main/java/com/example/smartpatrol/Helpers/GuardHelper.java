@@ -7,6 +7,7 @@ import com.example.smartpatrol.Firebase.FirebaseFields;
 import com.example.smartpatrol.Firebase.FirebaseRepository;
 import com.example.smartpatrol.Models.Guard;
 import com.example.smartpatrol.interfaces.callback;
+import com.example.smartpatrol.interfaces.getSchedules;
 import com.google.firebase.firestore.DocumentReference;
 
 import java.util.HashMap;
@@ -58,6 +59,7 @@ public class GuardHelper {
     private static void createGuardCollectionInFirebase(DocumentReference reference,callback callback) {
         FirebaseRepository.setDocument(createGuard(),reference,callback);
     }
+
 
     private static Map<String, Object> createGuard() {
         Map<String, Object> map=new HashMap<>();
