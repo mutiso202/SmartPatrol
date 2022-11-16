@@ -1,35 +1,17 @@
 package com.example.smartpatrol;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Icon;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.smartpatrol.classes.Guard;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
-import com.google.firebase.storage.UploadTask;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView user_name,user_email;
@@ -55,12 +37,9 @@ public class ProfileActivity extends AppCompatActivity {
         edit=findViewById(R.id.edit);
 
 
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(ProfileActivity.this,EditProfileActivity.class);
-                startActivity(intent);
-            }
+        edit.setOnClickListener(view -> {
+            Intent intent=new Intent(ProfileActivity.this,EditProfileActivity.class);
+            startActivity(intent);
         });
 
         imageArrowBack.setOnClickListener(v -> {

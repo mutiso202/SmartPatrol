@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/patrolCard">
+    android:id="@+id/homepageCard">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_car" />
+                app:srcCompat="@drawable/flag" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -41,29 +41,35 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="70"
-                    android:orientation="vertical">
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="8dp"
+                    >
 
                     <TextView
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Date"
+                        android:layout_weight="4"
+                        android:text="Position Time"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/textView7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Time"
+                        android:layout_weight="2"
+                        android:text="1507hrs"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
@@ -72,21 +78,21 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_weight="30"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/DayTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="15th August 2000"
+                        android:text="Tap to view on Past patrols"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/TimeTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="10.00 am"
+                        android:text="Tap to view on Map"
                         android:textColor="@color/white" />
                 </LinearLayout>
             </LinearLayout>

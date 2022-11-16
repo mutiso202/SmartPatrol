@@ -6,8 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.LoginActivity"
-    android:outlineProvider="none">
+    tools:context=".activities.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -76,14 +75,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/boxed_rectangle"
-                android:layout_marginTop="10dp">
+                android:background="@drawable/background_textview_no_boarders"
+                android:layout_marginTop="10dp"
+                android:padding="10dp">
 
 
 
@@ -134,8 +135,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/boxed_rectangle"
-            android:layout_marginTop="10dp">
+            android:background="@drawable/background_textview_no_boarders"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            >
 
 
         <TextView
@@ -183,6 +186,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/forgotPassword"
                 android:layout_gravity="right"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
@@ -193,28 +197,19 @@
                 android:textColor="@color/primary_dark" />
 
             <Button
-                android:id="@+id/signIn"
+                android:id="@+id/sign_In"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/accent"
-                android:padding="10dp"
-                android:text="Sign IN"
-                android:textAllCaps="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/shadow_blue"
+                android:text="Log In"
+                android:textAllCaps="false"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                app:cornerRadius="7dp"/>
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_gravity="center"
-                android:id="@+id/RegisterBtn"
-                android:textColor="@color/black"
-                android:text="Don't have an account? Register here"/>
 
             <ProgressBar
                 android:layout_width="wrap_content"

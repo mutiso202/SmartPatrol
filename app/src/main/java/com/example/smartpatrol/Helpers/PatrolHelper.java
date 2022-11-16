@@ -9,7 +9,6 @@ import com.example.smartpatrol.Firebase.FirebasePaths;
 import com.example.smartpatrol.Firebase.FirebaseRepository;
 import com.example.smartpatrol.Models.Incident;
 import com.example.smartpatrol.Models.Patrol;
-import com.example.smartpatrol.interfaces.FirebaseDocumentCount;
 import com.example.smartpatrol.interfaces.callback;
 import com.example.smartpatrol.util.LocationUtils;
 import com.google.android.gms.tasks.Task;
@@ -96,7 +95,7 @@ public class PatrolHelper {
         return patrol;
     }
 
-    public static void getNumberOfPatrolsByGuard(String guardId, FirebaseDocumentCount count){
+    /*public static void getNumberOfPatrolsByGuard(String guardId, FirebaseDocumentCount count){
         CollectionReference reference= GUARDS_REFERENCE.document(guardId).collection(FirebasePaths.PATROLS_PATH);
         AggregateQuery countQuery =reference.count();
 
@@ -109,6 +108,6 @@ public class PatrolHelper {
             }
         });
 
-    }
+    }*/
 
 }

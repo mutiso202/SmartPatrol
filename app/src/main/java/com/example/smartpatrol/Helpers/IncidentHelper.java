@@ -2,18 +2,12 @@ package com.example.smartpatrol.Helpers;
 
 import static com.example.smartpatrol.Firebase.FirebaseCollections.INCIDENT_REFERENCE;
 
-import android.widget.Toast;
+import android.telephony.SmsManager;
 
-import androidx.annotation.NonNull;
-
-import com.example.smartpatrol.Firebase.FirebaseFields;
 import com.example.smartpatrol.Firebase.FirebaseRepository;
-import com.example.smartpatrol.Incident2Activity;
 import com.example.smartpatrol.Models.Incident;
 import com.example.smartpatrol.classes.Guard;
 import com.example.smartpatrol.interfaces.callback;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 
 import java.util.Date;
@@ -36,6 +30,19 @@ public class IncidentHelper {
     }
 
     private static Map<String, Object> createIncidentMap(Incident incident) {
+        String phoneNumber="0746493912";
+        String description=incident.getDescription();
+
+        try {
+            SmsManager smsManager=SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNumber,null,description,null,null);
+
+        } catch (Exception  e){
+            e.printStackTrace();
+
+        }
+
+        
         Map<String,Object> hashMap = new HashMap();
         hashMap.put("Date", new Date());
         hashMap.put("Description", incident.getDescription());

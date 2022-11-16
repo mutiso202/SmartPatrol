@@ -12,4 +12,5 @@
     <color name="secondary">#7D98A1</color>
     <color name="primary">#5E6572</color>
     <color name="accent">#A9B4C2</color>
+    <color name="shadow_blue">#8091A5</color>
 </resources>

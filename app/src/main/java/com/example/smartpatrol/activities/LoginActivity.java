@@ -13,9 +13,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.smartpatrol.AddDetailsActivity;
+import com.example.smartpatrol.ContactInfoActivity;
+import com.example.smartpatrol.ForgotPasswordActivity;
 import com.example.smartpatrol.Helpers.GuardHelper;
 import com.example.smartpatrol.Homepage_activity;
 import com.example.smartpatrol.Models.Guard;
+import com.example.smartpatrol.PostSiteActivity;
 import com.example.smartpatrol.R;
 import com.example.smartpatrol.RegisterActivity;
 import com.example.smartpatrol.interfaces.callback;
@@ -28,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
     Button signIn;
     EditText email, pass;
     private static boolean isPasswordVisible=false;
-    TextView RegisterBtn;
     ProgressBar progressBarLogin;
+    TextView forgotPassword;
 
 
     @Override
@@ -76,11 +80,13 @@ public class LoginActivity extends AppCompatActivity {
                     });
         });
 
-        //redirect
-        RegisterBtn.setOnClickListener(v -> {
-            Intent intent=new Intent(LoginActivity.this, RegisterActivity.class);
+        forgotPassword.setOnClickListener(view -> {
+            Intent intent=new Intent(LoginActivity.this, ForgotPasswordActivity.class);
             startActivity(intent);
         });
+
+        //redirect
+
 
     }
 
@@ -96,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void checkIfGuardIsSignedIn() {
         if (mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, Homepage_activity.class));
+            startActivity(new Intent(LoginActivity.this, PostSiteActivity.class));
             Toast.makeText(this, "Logged in!", Toast.LENGTH_SHORT).show();
             finish();
         }
@@ -104,19 +110,18 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initializeViews() {
         mAuth = FirebaseAuth.getInstance();
-        signIn = findViewById(R.id.signIn);
+        signIn = findViewById(R.id.sign_In);
         email = findViewById(R.id.email);
         pass = findViewById(R.id.password);
         passwordVisibility = findViewById(R.id.passwordVisibility);
         progressBarLogin=findViewById(R.id.progressbarLogin);
-        RegisterBtn=findViewById(R.id.RegisterBtn);
+        forgotPassword=findViewById(R.id.forgotPassword);
+
 
 
         progressBarLogin.setVisibility(View.INVISIBLE);
     }
 
-    private void toastMessage(String s) {
-    }
 
     @Override
     protected void onStart() {

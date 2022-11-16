@@ -55,20 +55,19 @@
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Arnold Ochieng"
+                android:text="Connie Connie"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/user_email"
-                android:layout_width="174dp"
-                android:layout_height="25dp"
-                android:text="arnoldochieng@gmail.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="connieconnie@gmail.com"
                 android:textColor="#000000"
                 app:layout_constraintBottom_toTopOf="@+id/incident"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.446"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/user_name" />
         </LinearLayout>
@@ -176,8 +175,8 @@
 
                 <ImageView
                     android:id="@+id/report_icon"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
@@ -185,7 +184,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/report" />
+                    app:srcCompat="@drawable/incident"
+                     />
 
 
                 <LinearLayout
@@ -201,6 +201,7 @@
                         android:layout_height="wrap_content"
                         android:text="Report incident"
                         android:textColor="#000000"
+                        android:layout_weight="1"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/incident_number" />
 
@@ -208,9 +209,10 @@
                         android:id="@+id/textView12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="128dp"
+                        android:layout_marginEnd="30dp"
                         android:text="Something has happened report here"
                         android:textColor="@color/accent"
+                        android:layout_weight="1"
                         app:layout_constraintBottom_toTopOf="@+id/endPatrol"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -253,8 +255,8 @@
 
                 <ImageView
                     android:id="@+id/EndPatrol"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
@@ -262,6 +264,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_endpatrol"
                     tools:srcCompat="@drawable/ic_endpatrol" />
 
 
@@ -274,8 +277,9 @@
 
                     <TextView
                         android:id="@+id/endPatrol"
-                        android:layout_width="106dp"
-                        android:layout_height="23dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:text="End Patrol"
                         android:textColor="#000000"
                         app:layout_constraintBottom_toTopOf="@+id/textView15"
@@ -288,7 +292,8 @@
                     <TextView
                         android:id="@+id/textView15"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:text="Leave your shift a little bit early"
                         android:textColor="@color/accent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -309,7 +314,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="#7D9BA1"
+        android:backgroundTint="@color/shadow_blue"
         android:text="Sign out"
         android:textAllCaps="false"
         android:textColor="@color/black"

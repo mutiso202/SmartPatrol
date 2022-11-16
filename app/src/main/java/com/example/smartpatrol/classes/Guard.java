@@ -27,10 +27,10 @@ public class Guard  {
 
     public String getContact() {return user.getPhoneNumber();}
 
-    public void setContact(PhoneAuthCredential authCredential, callback callback) {
+    /*public void setContact() {
         user.updatePhoneNumber(authCredential);
     }
-
+*/
     public String getuID() {
         return user.getUid();
     }
@@ -51,13 +51,13 @@ public class Guard  {
         return user.getDisplayName();
     }
 
-    public void setName(String name,callback callback) {
+    /*public void setName() {
       UserProfileChangeRequest userProfileChangeRequest=new UserProfileChangeRequest.Builder()
-              .setDisplayName(name)
+              .setDisplayName()
               .build();
       user.updateProfile(userProfileChangeRequest).addOnSuccessListener(unused -> callback.onSuccess(unused))
               .addOnFailureListener(e -> callback.onFailure(e));
-    }
+    }*/
     public ArrayList<Patrol> getPatrols() {
         return patrols;
     }

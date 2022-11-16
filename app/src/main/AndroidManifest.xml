@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <uses-feature android:name="android.hardware.camera.any" />
 
@@ -20,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPatrol"
         tools:targetApi="31">
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -35,6 +37,22 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_API_KEY" />
 
+        <activity
+            android:name=".LocatorMapActivity"
+            android:exported="false"
+            android:label="@string/title_activity_locator_map" />
+        <activity
+            android:name=".PostSiteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
         <activity
             android:name=".ScheduleActivity"
             android:exported="false" />
@@ -76,12 +94,10 @@
             android:name=".activities.Splashscreen$WakthroughScreen"
             android:exported="false" />
         <activity
-        android:name=".classes.CaptureAct"
+            android:name=".classes.CaptureAct"
             android:screenOrientation="portrait"
             android:stateNotNeeded="true"
-            android:theme="@style/zxing_CaptureTheme"
-            />
-
+            android:theme="@style/zxing_CaptureTheme" />
         <activity
             android:name=".activities.Splashscreen"
             android:exported="true">
