@@ -126,7 +126,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/police_officer" />
+                        app:srcCompat="@drawable/icons8_forest_ranger_50px" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -183,7 +183,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/email" />
+                        app:srcCompat="@drawable/ic_email" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 
@@ -239,7 +239,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/phone_number" />
+                        app:srcCompat="@drawable/padlock" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>

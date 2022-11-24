@@ -88,8 +88,9 @@ public class Incident2Activity extends AppCompatActivity {
 
         cameraView.setOnClickListener(v -> {
             Intent open_camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(open_camera, 100);
+            startActivityForResult(open_camera, 1540);
         });
+
 
         send_incident2.setOnClickListener(v -> {
             incident.setDescription(editText.getText().toString());
@@ -148,18 +149,25 @@ public class Incident2Activity extends AppCompatActivity {
         incident=getIntent().getParcelableExtra(INCIDENT_PARCELABLE);
     }
 
+
+
     ;
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @NonNull Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 100) {
-            Bitmap captureImage = (Bitmap) data.getExtras().get("data");
-            cameraIcon.setImageBitmap(captureImage);
+        if(resultCode != RESULT_CANCELED){
+            if (requestCode == 1540) {
+                Bitmap captureImage = (Bitmap) data.getExtras().get("data");
+
+                cameraIcon.setImageBitmap(captureImage);
 
 
-            handleUpload(captureImage);
+
+                //handleUpload(captureImage);
+            }
         }
+
         if (resultCode == RESULT_OK) {
             if (requestCode == GALLERY_REQ_CODE) {
                 galleryIcon.setImageURI(data.getData());

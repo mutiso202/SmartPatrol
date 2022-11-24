@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void checkIfGuardIsSignedIn() {
         if (mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, PostSiteActivity.class));
+            startActivity(new Intent(LoginActivity.this, Homepage_activity.class));
             Toast.makeText(this, "Logged in!", Toast.LENGTH_SHORT).show();
             finish();
         }

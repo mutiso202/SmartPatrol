@@ -79,28 +79,30 @@ public class LocationUtils {
             if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 
 
-                    LocationServices.getFusedLocationProviderClient(activity)
-                            .requestLocationUpdates(locationRequest, new LocationCallback() {
-                                @Override
-                                public void onLocationResult(@NonNull LocationResult locationResult) {
-                                    super.onLocationResult(locationResult);
+                LocationServices.getFusedLocationProviderClient(activity)
+                        .requestLocationUpdates(locationRequest, new LocationCallback() {
+                            @Override
+                            public void onLocationResult(@NonNull LocationResult locationResult) {
+                                super.onLocationResult(locationResult);
 
-                                    LocationServices.getFusedLocationProviderClient(activity)
-                                            .removeLocationUpdates(this);
+                                LocationServices.getFusedLocationProviderClient(activity)
+                                        .removeLocationUpdates(this);
 
-                                    if (locationResult != null && locationResult.getLocations().size() >0){
+                                if (locationResult.getLocations().size() > 0) {
 
-                                        int index = locationResult.getLocations().size() - 1;
-                                        callback.onSuccess(locationResult.getLocations().get(index));
+                                    int index = locationResult.getLocations().size() - 1;
+                                    callback.onSuccess(locationResult.getLocations().get(index));
 
-                                    }
                                 }
-                            }, Looper.getMainLooper());
+                                else callback.onFailure("error");
+                            }
+                        }, Looper.getMainLooper());
 
 
             } else {
-                //requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
             }
+
         }
        /* mLocationManager = (LocationManager) activity.getSystemService(LOCATION_SERVICE);
 

@@ -35,7 +35,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyAJnDBJM8t5SL3tzrSfucXgvYsIAcSZJJE" />
 
         <activity
             android:name=".LocatorMapActivity"
@@ -47,6 +47,9 @@
         <activity
             android:name=".ContactInfoActivity"
             android:exported="false" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name=".AddDetailsActivity"
             android:exported="false" />

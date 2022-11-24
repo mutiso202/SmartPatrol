@@ -36,6 +36,7 @@ public class AddDetailsActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
+
         profile.setOnClickListener(v -> {
             Intent open_gallery = new Intent(Intent.ACTION_PICK);
             open_gallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

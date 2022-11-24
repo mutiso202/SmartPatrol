@@ -20,12 +20,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.smartpatrol.databinding.ActivityLocatorMapBinding;
-import com.karumi.dexter.Dexter;
+/*import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.single.PermissionListener;
+import com.karumi.dexter.listener.single.PermissionListener;*/
 
 public class LocatorMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -64,11 +64,11 @@ public class LocatorMapActivity extends FragmentActivity implements OnMapReadyCa
 
             }
         };
-        askLocationPermission();
+       // askLocationPermission();
 
     }
 
-    private void askLocationPermission() {
+  /*  private void askLocationPermission() {
         Dexter.withActivity((Activity) getBaseContext()).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
@@ -95,5 +95,5 @@ public class LocatorMapActivity extends FragmentActivity implements OnMapReadyCa
 
             }
         });
-    }
+    }*/
 }
